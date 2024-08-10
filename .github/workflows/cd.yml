@@ -3,7 +3,7 @@ name: Continuous Deployment
 on:
   push:
     branches:
-      - "main"
+      - "master"
 jobs:
   push_to_registry:
     name: Deploying Docker Image to Container Registry
