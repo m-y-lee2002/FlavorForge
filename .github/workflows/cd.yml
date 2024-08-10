@@ -15,12 +15,11 @@ jobs:
       - name: Pull Latest Code From Github Repo
         uses: actions/checkout@v4
 
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - name: Set Up JDK
+        uses: actions/setup-java@v4
         with:
-        distribution: 'temurin' 
-        java-version: '21'
+          distribution: 'temurin' 
+          java-version: '21'
 
       # Run Maven clean install in the backend directory
       - name: Build Backend with Maven
