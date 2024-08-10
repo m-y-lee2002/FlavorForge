@@ -14,6 +14,17 @@ jobs:
       # Good to do after any file mutations to make sure the docker build is using the most up-to-date version of repo
       - name: Pull Latest Code From Github Repo
         uses: actions/checkout@v4
+        
+      # Set up Java environment (optional, specify version if needed)
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17' # Specify your Java version
+
+      # Run Maven clean install in the backend directory
+      - name: Build Backend with Maven
+        working-directory: ./backend
+        run: mvn clean install
 
       - name: Set up Buildx environment
         uses: docker/setup-buildx-action@v3
@@ -34,8 +45,21 @@ jobs:
           push: false
           tags: mylee2002/my-cookbook:frontend-latest
           load: true
-
+      # Build Backend docker image
+      - name: Build Backend
+        id: build-backend
+        uses: docker/build-push-action@v6
+        with:
+          context: ./backend
+          push: false
+          tags: mylee2002/pokemon-tb:backend-latest
+          load: true
       # Push Frontend image   
       - name: Push Frontend Image
         if: steps.build-frontend.outcome == 'success'
         run: docker push mylee2002/my-cookbook:frontend-latest
+
+      # Push Backend image
+      - name: Push Backend Image
+        if: steps.build-backend.outcome == 'success'
+        run: docker push mylee2002/pokemon-tb:backend-latest
