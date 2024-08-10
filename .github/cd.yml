@@ -8,6 +8,7 @@ jobs:
   push_to_registry:
     name: Deploying Docker Image to Container Registry
     runs-on: ubuntu-latest
+    
     steps:
       # resource: https://github.com/actions/checkout
       # Good to do after any file mutations to make sure the docker build is using the most up-to-date version of repo
