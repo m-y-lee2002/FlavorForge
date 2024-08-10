@@ -17,16 +17,14 @@ jobs:
 
       # Set up Java environment
       - name: Set up JDK
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
-          java-version: '17'
-        working-directory: ./backend
-        run: mvn clean install 
+          java-version: '17' 
 
-      # # Run Maven clean install in the backend directory
-      # - name: Build Backend with Maven
-      #   working-directory: ./backend
-      #   run: mvn clean install
+      # Run Maven clean install in the backend directory
+      - name: Build Backend with Maven
+        working-directory: ./backend
+        run: mvn clean install
 
       - name: Set up Buildx environment
         uses: docker/setup-buildx-action@v3
