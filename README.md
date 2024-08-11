@@ -56,5 +56,10 @@ I generate various reports in Jira to track our progress, including:
 - **Burndown Charts**: Visual representation of work completed versus work remaining.
 - **Sprint Reports**: Summary of the work completed during a sprint.
 
+    
+**Sprint Health** 
+![Screenshot 2024-08-11 174011](https://github.com/user-attachments/assets/f47738c7-a3fb-4830-a234-45e64ab621b7)
+
+
 ## Contact
 For inquiries, please contact Michael Lee (mylee13845@gmail.com) or visit my [GitHub profile](https://github.com/m-y-lee2002).
