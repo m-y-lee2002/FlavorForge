@@ -48,8 +48,8 @@ I create and manage timelines using:
 ### Sprints
 My sprint process includes:
 - **Sprint Planning**: Selecting items from the backlog for the upcoming sprint.
-- **Daily Stand-ups**: Short meetings to discuss progress and blockers.
-- **Sprint Review and Retrospective**: Reviewing completed work and discussing improvements.
+- **Daily Progress Update**: Short modification of Jira timeline and necessary additions of Epics, Stories, Tasks, and Bugs.
+- **Sprint Review and Retrospective**: Reviewing completed work and brainstorm potential improvements.
 
 ## Reporting
 I generate various reports in Jira to track our progress, including:
