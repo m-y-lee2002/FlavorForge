@@ -59,8 +59,12 @@ I generate various reports in Jira to track our progress, including:
     
 **Sprint Health**  
 ![Screenshot 2024-08-11 174011](https://github.com/user-attachments/assets/f47738c7-a3fb-4830-a234-45e64ab621b7)  
+
+    
 **Burndown Chart**  
 ![Screenshot 2024-08-11 174046](https://github.com/user-attachments/assets/398bae6d-0855-4155-a578-69e6309c523a)  
+
+    
 **Days Remaining in Spring**  
 ![Screenshot 2024-08-11 174029](https://github.com/user-attachments/assets/e43c450f-6d8d-4316-a2dc-1176e8ead90e)  
 
