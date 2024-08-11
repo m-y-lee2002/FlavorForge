@@ -29,30 +29,30 @@ To set up the project locally, follow these steps:
 ## Using Jira Scrum
 
 ### Backlogs
-In Jira, we manage our backlog by categorizing issues into:
+In Jira, I manage the backlog by categorizing issues into:
 - **User Stories**: Features from the user's perspective.
 - **Tasks**: Actionable items derived from user stories.
 - **Bugs**: Issues that need resolution.
 
 ### Boards
-We utilize Scrum boards to visualize our workflow, which includes the following stages:
+I utilize Scrum boards to visualize our workflow, which includes the following stages:
 - **To Do**: Tasks that are not yet started.
 - **In Progress**: Tasks currently being worked on.
 - **Done**: Completed tasks.
 
 ### Timelines
-We create and manage timelines using:
+I create and manage timelines using:
 - **Epics**: Large bodies of work that can be broken down into smaller tasks.
 - **Sprints**: Time-boxed periods (typically 2 weeks) during which specific tasks are completed.
 
 ### Sprints
-Our sprint process includes:
+My sprint process includes:
 - **Sprint Planning**: Selecting items from the backlog for the upcoming sprint.
 - **Daily Stand-ups**: Short meetings to discuss progress and blockers.
 - **Sprint Review and Retrospective**: Reviewing completed work and discussing improvements.
 
 ## Reporting
-We generate various reports in Jira to track our progress, including:
+I generate various reports in Jira to track our progress, including:
 - **Burndown Charts**: Visual representation of work completed versus work remaining.
 - **Sprint Reports**: Summary of the work completed during a sprint.
 
