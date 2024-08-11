@@ -43,11 +43,14 @@ I utilize Scrum boards to visualize our workflow, which includes the following s
 **Current Board**  
 ![Screenshot 2024-08-11 174531](https://github.com/user-attachments/assets/eb263ffc-d0c0-41ea-b866-7c7e4c95f27f)  
 
-
 ### Timelines
 I create and manage timelines using:
 - **Epics**: Large bodies of work that can be broken down into smaller tasks.
 - **Sprints**: Time-boxed periods (typically 2 weeks) during which specific tasks are completed.
+
+**Current Timeline**  
+![my_cookbook_2024-08-11_05 48pm](https://github.com/user-attachments/assets/4a69eb51-d197-4b8f-9db7-c66980403cc1)  
+
 
 ### Sprints
 My sprint process includes:
@@ -71,7 +74,6 @@ I generate various reports in Jira to track our progress, including:
     
 **Days Remaining in Spring**  
 ![Screenshot 2024-08-11 174029](https://github.com/user-attachments/assets/e43c450f-6d8d-4316-a2dc-1176e8ead90e)  
-
 
 
 
