@@ -57,7 +57,7 @@ I generate various reports in Jira to track our progress, including:
 - **Sprint Reports**: Summary of the work completed during a sprint.
 
     
-**Sprint Health** 
+**Sprint Health**  
 ![Screenshot 2024-08-11 174011](https://github.com/user-attachments/assets/f47738c7-a3fb-4830-a234-45e64ab621b7)
 
 
