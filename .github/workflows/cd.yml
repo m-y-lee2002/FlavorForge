@@ -56,7 +56,7 @@ jobs:
         with:
           context: ./frontend
           push: false
-          tags: mylee2002/FlavorForge:frontend-latest
+          tags: mylee2002/flavor-forge:frontend-latest
           load: true
           
       # Build Backend docker image
@@ -66,14 +66,14 @@ jobs:
         with:
           context: ./backend
           push: false
-          tags: mylee2002/FlavorForge:backend-latest
+          tags: mylee2002/flavor-forge:backend-latest
           load: true
       # Push Frontend image   
       - name: Push Frontend Image
         if: steps.build-frontend.outcome == 'success'
-        run: docker push mylee2002/FlavorForge:frontend-latest
+        run: docker push mylee2002/flavor-forge:frontend-latest
 
       # Push Backend image
       - name: Push Backend Image
         if: steps.build-backend.outcome == 'success'
-        run: docker push mylee2002/FlavorForge:backend-latest
+        run: docker push mylee2002/flavor-forge:backend-latest
