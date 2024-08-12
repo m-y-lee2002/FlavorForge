@@ -14,7 +14,7 @@ I have created a user interface design plan using Figma. You can explore the pro
 
 ### Prerequisites
 Before you begin, ensure you have the following software installed:
-- [Node.js](https://nodejs.org/) (version X.X.X)
+- [Node.js](https://nodejs.org/)
 - [Git](https://git-scm.com/)
 
 ### Installation
