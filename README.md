@@ -1,4 +1,4 @@
-# My CookBook
+# Flavor Forge
 
 ## Description
 This project aims to allow users to store recipes as well as information regarding those dishes. In the future may add functionality to allow for users to friend each other 
