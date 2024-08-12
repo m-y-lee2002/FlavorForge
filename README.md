@@ -1,7 +1,7 @@
 # My CookBook
 
 ## Description
-This project aims to allow users to store recipes as well as information regarding those dishes. We utilize Jira Scrum to manage our workflow effectively, ensuring that we stay on track and meet our goals.
+This project aims to allow users to store recipes as well as information regarding those dishes. In the future may add functionality to allow for users to friend each other and share recipes and view others recipe collection. We utilize Jira Scrum to manage our workflow effectively, ensuring that we stay on track and meet our goals.
 
 ## Getting Started
 
