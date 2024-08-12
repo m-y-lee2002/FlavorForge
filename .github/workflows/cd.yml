@@ -12,15 +12,9 @@ jobs:
       mysql:
         image: mysql:5.7
         env:
-          MYSQL_ROOT_PASSWORD: root
+          MYSQL_ROOT_PASSWORD: Keyboard123!
           MYSQL_DATABASE: MyCookBook
-        ports:
-          - 3306:3306
-        options: >-
-          --health-cmd "mysqladmin ping --silent"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 3
+        ports: 3306:3306
     steps:
       # resource: https://github.com/actions/checkout
       # Good to do after any file mutations to make sure the docker build is using the most up-to-date version of repo
