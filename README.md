@@ -53,7 +53,7 @@ I utilize Scrum boards to visualize our workflow, which includes the following s
 - **In Progress**: Tasks currently being worked on.
 - **Done**: Completed tasks.
 
-**Current Board**  
+**Current Board:**  
 ![Screenshot 2024-08-11 174531](https://github.com/user-attachments/assets/eb263ffc-d0c0-41ea-b866-7c7e4c95f27f)  
 ### Timelines
 I create and manage timelines using:
