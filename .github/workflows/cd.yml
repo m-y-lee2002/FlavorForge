@@ -14,7 +14,7 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: Keyboard123!
           MYSQL_DATABASE: MyCookBook
-        ports: 
+        ports:
           - 3306:3306
     steps:
       # resource: https://github.com/actions/checkout
@@ -71,4 +71,4 @@ jobs:
       # Push Backend image
       - name: Push Backend Image
         if: steps.build-backend.outcome == 'success'
-        run: docker push mylee2002/flavor-forge:backend-latest
+        run: docker push mylee2002/FlavorForge:backend-latest
