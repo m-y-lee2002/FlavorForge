@@ -9,6 +9,12 @@ I have created a user interface design plan using Figma. You can explore the pro
 
 [View Prototype in Figma](https://www.figma.com/proto/obHUI1aO1xF9NwEIsPGC9x/Figma-basics?node-id=1669-162202&t=u3G21a5TVdmpRsHh-1)  
 
+### Enhanced Entity-Relationship (EER) Diagram:  
+This diagram for Flavor Forge serves as a visual representation of the database design and data models, showing the relationships between entities used in the application.  
+  
+![Screenshot 2024-08-12 124832](https://github.com/user-attachments/assets/ecd94486-34b0-4404-bb0a-fbcbdfe04c9f)  
+
+
 
 ## Getting Started
 
@@ -47,14 +53,14 @@ I utilize Scrum boards to visualize our workflow, which includes the following s
 - **In Progress**: Tasks currently being worked on.
 - **Done**: Completed tasks.
 
-**Current Board**  
+**Current Board:**  
 ![Screenshot 2024-08-11 174531](https://github.com/user-attachments/assets/eb263ffc-d0c0-41ea-b866-7c7e4c95f27f)  
 ### Timelines
 I create and manage timelines using:
 - **Epics**: Large bodies of work that can be broken down into smaller tasks.
 - **Sprints**: Time-boxed periods (typically 2 weeks) during which specific tasks are completed.
 
-**Current Timeline**  
+**Current Timeline:**  
 ![my_cookbook_2024-08-11_05 48pm](https://github.com/user-attachments/assets/4a69eb51-d197-4b8f-9db7-c66980403cc1)  
 
 
@@ -70,15 +76,15 @@ I generate various reports in Jira to track our progress, including:
 - **Sprint Reports**: Summary of the work completed during a sprint.
 
     
-**Sprint Health**  
+**Sprint Health:**  
 ![Screenshot 2024-08-11 174011](https://github.com/user-attachments/assets/f47738c7-a3fb-4830-a234-45e64ab621b7)  
 
     
-**Burndown Chart**  
+**Burndown Chart:**  
 ![Screenshot 2024-08-11 174046](https://github.com/user-attachments/assets/398bae6d-0855-4155-a578-69e6309c523a)  
 
     
-**Days Remaining in Spring**  
+**Days Remaining in Spring:**  
 ![Screenshot 2024-08-11 174029](https://github.com/user-attachments/assets/e43c450f-6d8d-4316-a2dc-1176e8ead90e)  
 
 
