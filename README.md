@@ -4,7 +4,10 @@
 This project aims to allow users to store recipes as well as information regarding those dishes. In the future may add functionality to allow for users to friend each other 
 share recipes and view recipe collections. We utilize Jira Scrum to manage our workflow effectively, ensuring that we stay on track and meet our goals.
 
-### High Fidelity Prototype: https://www.figma.com/proto/obHUI1aO1xF9NwEIsPGC9x/Figma-basics?node-id=605-276&t=u3G21a5TVdmpRsHh-1  \
+### High Fidelity Prototype: 
+I have created a user interface design plan using Figma. You can explore the prototype through the link below:
+
+[View Prototype in Figma] https://www.figma.com/proto/obHUI1aO1xF9NwEIsPGC9x/Figma-basics?node-id=605-276&t=u3G21a5TVdmpRsHh-1  
 
 
 ## Getting Started
