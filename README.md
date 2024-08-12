@@ -7,7 +7,7 @@ share recipes and view recipe collections. We utilize Jira Scrum to manage our w
 ### High Fidelity Prototype: 
 I have created a user interface design plan using Figma. You can explore the prototype through the link below:
 
-[View Prototype in Figma] https://www.figma.com/proto/obHUI1aO1xF9NwEIsPGC9x/Figma-basics?node-id=605-276&t=u3G21a5TVdmpRsHh-1  
+[View Prototype in Figma](https://www.figma.com/proto/obHUI1aO1xF9NwEIsPGC9x/Figma-basics?node-id=605-276&t=u3G21a5TVdmpRsHh-1)  
 
 
 ## Getting Started
