@@ -11,6 +11,7 @@ I have created a user interface design plan using Figma. You can explore the pro
 
 ### Enhanced Entity Diagram
 This diagram for Flavor Forge serves as a visual representation of the database design and data models, showing the relationships between entities used in the application.  
+  
 ![Screenshot 2024-08-12 124832](https://github.com/user-attachments/assets/ecd94486-34b0-4404-bb0a-fbcbdfe04c9f)  
 
 
