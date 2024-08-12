@@ -9,7 +9,7 @@ I have created a user interface design plan using Figma. You can explore the pro
 
 [View Prototype in Figma](https://www.figma.com/proto/obHUI1aO1xF9NwEIsPGC9x/Figma-basics?node-id=1669-162202&t=u3G21a5TVdmpRsHh-1)  
 
-### Enhanced Entity-Relationship (EER) Diagram
+### Enhanced Entity-Relationship (EER) Diagram:  
 This diagram for Flavor Forge serves as a visual representation of the database design and data models, showing the relationships between entities used in the application.  
   
 ![Screenshot 2024-08-12 124832](https://github.com/user-attachments/assets/ecd94486-34b0-4404-bb0a-fbcbdfe04c9f)  
