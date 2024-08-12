@@ -60,7 +60,7 @@ I create and manage timelines using:
 - **Epics**: Large bodies of work that can be broken down into smaller tasks.
 - **Sprints**: Time-boxed periods (typically 2 weeks) during which specific tasks are completed.
 
-**Current Timeline**  
+**Current Timeline:**  
 ![my_cookbook_2024-08-11_05 48pm](https://github.com/user-attachments/assets/4a69eb51-d197-4b8f-9db7-c66980403cc1)  
 
 
@@ -76,15 +76,15 @@ I generate various reports in Jira to track our progress, including:
 - **Sprint Reports**: Summary of the work completed during a sprint.
 
     
-**Sprint Health**  
+**Sprint Health:**  
 ![Screenshot 2024-08-11 174011](https://github.com/user-attachments/assets/f47738c7-a3fb-4830-a234-45e64ab621b7)  
 
     
-**Burndown Chart**  
+**Burndown Chart:**  
 ![Screenshot 2024-08-11 174046](https://github.com/user-attachments/assets/398bae6d-0855-4155-a578-69e6309c523a)  
 
     
-**Days Remaining in Spring**  
+**Days Remaining in Spring:**  
 ![Screenshot 2024-08-11 174029](https://github.com/user-attachments/assets/e43c450f-6d8d-4316-a2dc-1176e8ead90e)  
 
 
