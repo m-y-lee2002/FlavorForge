@@ -71,4 +71,4 @@ jobs:
       # Push Backend image
       - name: Push Backend Image
         if: steps.build-backend.outcome == 'success'
-        run: docker push mylee2002/FlavorForge:backend-latest
+        run: docker push mylee2002/flavor-forge:backend-latest
