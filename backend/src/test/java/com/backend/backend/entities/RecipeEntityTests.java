@@ -1,15 +1,13 @@
 package com.backend.backend.entities;
 
-import com.backend.backend.Entity.Dish;
-import com.backend.backend.Entity.LocalUser;
-import com.backend.backend.Entity.Warning;
-import com.backend.backend.Entity.WarningId;
+import com.backend.backend.Entity.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.cglib.core.Local;
 import org.springframework.test.context.ActiveProfiles;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -18,15 +16,26 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @ActiveProfiles("test")
-public class WarningEntityTests {
-
+public class RecipeEntityTests {
     private static LocalUser testUser;
+    private static Ingredient testIngredient;
     private static Dish testDish;
 
     @BeforeAll
     static void setTestDummies() {
         testUser = createTestUser();
+        testIngredient = createTestIngredient();
         testDish = createTestDish();
+    }
+
+    private static Ingredient createTestIngredient() {
+        Ingredient ingredient = new Ingredient();
+        ingredient.setName("Chicken");
+        ingredient.setCalories(300);
+        ingredient.setProtein(50);
+        ingredient.setCarbs(20);
+        ingredient.setFibers(5);
+        return ingredient;
     }
     private static Dish createTestDish(){
         Dish dish = new Dish();
@@ -41,7 +50,6 @@ public class WarningEntityTests {
         dish.setFibers(3);
         return dish;
     }
-
     private static LocalUser createTestUser() {
         LocalUser localUser = new LocalUser();
         localUser.setEmail("testEmail@gmail.com");
@@ -52,28 +60,24 @@ public class WarningEntityTests {
     @Autowired
     private TestEntityManager entityManager;
     @Test
-    public void testWarningPersistence(){
+    public void testRecipePersistence(){
         entityManager.persist(testUser);
+        entityManager.persist(testIngredient);
         entityManager.persist(testDish);
         entityManager.flush();
-        WarningId warningId = new WarningId();
-        warningId.setDid(testDish.getDid());
-        warningId.setMessage("Hello World!");
+        RecipeId recipeId = new RecipeId(testDish.getDid(), testIngredient.getIngredient_id());
+        Recipe recipe = new Recipe(recipeId, 3.5, "grams");
 
-        // Create the Warning entity and set the composite key
-        Warning warning = new Warning();
-        warning.setId(warningId);
-
-        // Persist the entity
-        entityManager.persist(warning);
+        entityManager.persist(recipe);
         entityManager.flush();
+        Recipe result = entityManager.find(Recipe.class, recipe.getRecipeId());
 
-        // Retrieve the persisted entity
-        Warning result = entityManager.find(Warning.class, warning.getId());
+        assertNotNull(result, "Recipe could not be found using recipe's composite key recipeId.");
 
-        // Assertions to verify the persistence
-        assertNotNull(result, "The persisted warning should not be null");
-        assertEquals(warning.getId().getDid(), result.getId().getDid(), "The did should match");
-        assertEquals(warning.getId().getMessage(), result.getId().getMessage(), "The message should match");
+        assertEquals(result.getAmount(),3.5);
+        assertEquals(result.getMeasurement(), "grams");
+        assertEquals(result.getRecipeId().getDid(), testDish.getDid(), "Resulting recipe's did does not match.");
+        assertEquals(result.getRecipeId().getIngredient_id(), testIngredient.getIngredient_id(), "Resulting recipe's ingredient_id does not match.");
+
     }
 }

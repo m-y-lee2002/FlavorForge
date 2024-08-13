@@ -16,8 +16,8 @@ public class Ingredient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Integer id;
+    @Column(name = "ingredient_id", nullable = false)
+    private Integer ingredient_id;
 
     @Column(name = "name", nullable = false)
     private String name;

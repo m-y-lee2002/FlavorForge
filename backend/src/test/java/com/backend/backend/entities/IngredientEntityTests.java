@@ -33,13 +33,13 @@ public class IngredientEntityTests {
 
         entityManager.persist(ingredient);
         entityManager.flush();
-        Ingredient result = entityManager.find(Ingredient.class, ingredient.getId());
+        Ingredient result = entityManager.find(Ingredient.class, ingredient.getIngredient_id());
 
         assertNotNull(result);
         assertEquals(result.getCalories(), 300, "Calories attribute does not match");
         assertEquals(result.getProtein(), 50, "Protein attribute does not match");
         assertEquals(result.getFibers(), 5, "Fiber attribute does not match");
-        assertEquals(result.getId(), 1, "id attribute does not match");
+        assertEquals(result.getIngredient_id(), 1, "id attribute does not match");
         assertEquals(result.getName(), "chicken", "name attribute does not match; potential casing issue.");
     }
 
@@ -61,13 +61,13 @@ public class IngredientEntityTests {
         ingredient2.setFibers(5);
 
         entityManager.persist(ingredient1);
-        entityManager.flush();
         entityManager.persist(ingredient2);
-        Ingredient result = entityManager.find(Ingredient.class,ingredient1.getId());
-        Ingredient result2 = entityManager.find(Ingredient.class,ingredient2.getId());
+        entityManager.flush();
+        Ingredient result = entityManager.find(Ingredient.class,ingredient1.getIngredient_id());
+        Ingredient result2 = entityManager.find(Ingredient.class,ingredient2.getIngredient_id());
 
-        assertEquals(result.getId(), 1, "ingredient1 id is not 1");
-        assertEquals(result2.getId(), 2, "ingredient2 id is not 2");
+        assertEquals(result.getIngredient_id(), 1, "ingredient1 id is not 1");
+        assertEquals(result2.getIngredient_id(), 2, "ingredient2 id is not 2");
     }
 
     @Test
@@ -77,7 +77,7 @@ public class IngredientEntityTests {
 
         entityManager.persist(ingredient);
         entityManager.flush();
-        Ingredient result = entityManager.find(Ingredient.class, ingredient.getId());
+        Ingredient result = entityManager.find(Ingredient.class, ingredient.getIngredient_id());
 
         assertNotNull(result);
         assertEquals(result.getName(), "chicken");
