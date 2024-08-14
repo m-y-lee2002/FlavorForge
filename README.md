@@ -14,7 +14,28 @@ This diagram for Flavor Forge serves as a visual representation of the database 
   
 ![Screenshot 2024-08-12 124832](https://github.com/user-attachments/assets/ecd94486-34b0-4404-bb0a-fbcbdfe04c9f)  
 
+## Technology Stack
 
+### Backend
+- **Language**: Java (OpenJDK17)
+- **Framework**: Spring Boot
+- **API**: RESTful API
+
+### Frontend
+- **Language**: JavaScript, JSX
+- **Framework**: React.js
+- **Styling**: CSS, Tailwind
+
+### Database
+- **Database**: MySQL
+- **ORM**: Hibernate
+
+### Tools and Software
+- **Version Control**: Git
+- **Project Management**: Jira
+- **Design**: Figma
+- **Containerization**: Docker
+- **Configuration**: YAML 
 
 ## Getting Started
 
