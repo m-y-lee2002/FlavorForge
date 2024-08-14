@@ -32,7 +32,7 @@ This diagram for Flavor Forge serves as a visual representation of the database 
 
 ### Tools and Software
 - **Version Control**: Git
-- **Project Management**: Jira
+- **Project Management**: Jira Scrum
 - **Design**: Figma
 - **Containerization**: Docker
 - **Configuration**: YAML 
