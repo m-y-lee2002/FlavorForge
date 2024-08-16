@@ -15,7 +15,7 @@ import java.util.Objects;
 @NoArgsConstructor
 public class WarningId implements Serializable {
 
-    private Integer did;
+    private DishId did;
     private String message;
 
     @Override

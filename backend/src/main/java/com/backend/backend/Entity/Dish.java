@@ -14,16 +14,9 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Dish {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @EmbeddedId
     @Column(name = "did", nullable = false, unique = true)
-    private Integer did;
-
-    @Column(name = "email", nullable = false)
-    private String email;
-
-    @Column(name = "name", nullable = false, unique = true)
-    private String name;
+    private DishId did;
 
     @Column(name = "img", nullable = true)
     private String img;
@@ -47,8 +40,7 @@ public class Dish {
     private Integer fibers;
 
     public Dish(String email, String name, String img, String foodType, Integer totalTime, Integer calories, Integer protein, Integer carbs, Integer fibers) {
-        this.email = email;
-        this.name = name.toLowerCase();
+        this.did = new DishId(email, name);
         this.img = img;
         String caseUniformity = foodType.toUpperCase();
         if(caseUniformity.equals("B")){

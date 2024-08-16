@@ -1,9 +1,6 @@
 package com.backend.backend.entities;
 
-import com.backend.backend.Entity.Dish;
-import com.backend.backend.Entity.LocalUser;
-import com.backend.backend.Entity.Warning;
-import com.backend.backend.Entity.WarningId;
+import com.backend.backend.Entity.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,9 +26,9 @@ public class WarningEntityTests {
         testDish = createTestDish();
     }
     private static Dish createTestDish(){
+        DishId dishId = new DishId(testUser.getEmail(), "Steak");
         Dish dish = new Dish();
-        dish.setEmail(testUser.getEmail());
-        dish.setName("Steak");
+        dish.setDid(dishId);
         dish.setImg("steak_dinner.png");
         dish.setFoodType("d1");
         dish.setTotalTime(10);

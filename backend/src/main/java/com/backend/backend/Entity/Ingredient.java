@@ -11,16 +11,12 @@ import lombok.Setter;
 @Getter
 @Table(name="Ingredient")
 @NoArgsConstructor
-@AllArgsConstructor
 public class Ingredient {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ingredient_id", nullable = false)
-    private Integer ingredient_id;
 
-    @Column(name = "name", nullable = false)
-    private String name;
+    @Id
+    @Column(name = "ingredient_name", nullable = false, unique = true)
+    private String ingredient_name;
 
     @Column(name = "calories")
     private Integer calories;
@@ -34,7 +30,7 @@ public class Ingredient {
     @Column(name = "fibers")
     private Integer fibers;
     public Ingredient(String name, Integer calories, Integer protein, Integer carbs, Integer fibers ){
-        this.name = name.toLowerCase();
+        this.ingredient_name = name.toLowerCase();
         this.calories = calories;
         this.protein = protein;
         this.carbs = carbs;
@@ -42,6 +38,6 @@ public class Ingredient {
     }
 
     public void setName(String name) {
-        this.name = name.toLowerCase();
+        this.ingredient_name = name.toLowerCase();
     }
 }

@@ -38,9 +38,9 @@ public class RecipeEntityTests {
         return ingredient;
     }
     private static Dish createTestDish(){
+        DishId dishId = new DishId(testUser.getEmail(), "Steak");
         Dish dish = new Dish();
-        dish.setEmail(testUser.getEmail());
-        dish.setName("Steak");
+        dish.setDid(dishId);
         dish.setImg("steak_dinner.png");
         dish.setFoodType("d1");
         dish.setTotalTime(10);
@@ -65,7 +65,7 @@ public class RecipeEntityTests {
         entityManager.persist(testIngredient);
         entityManager.persist(testDish);
         entityManager.flush();
-        RecipeId recipeId = new RecipeId(testDish.getDid(), testIngredient.getIngredient_id());
+        RecipeId recipeId = new RecipeId(testDish.getDid(), testIngredient.getIngredient_name());
         Recipe recipe = new Recipe(recipeId, 3.5, "grams");
 
         entityManager.persist(recipe);
@@ -77,7 +77,7 @@ public class RecipeEntityTests {
         assertEquals(result.getAmount(),3.5);
         assertEquals(result.getMeasurement(), "grams");
         assertEquals(result.getRecipeId().getDid(), testDish.getDid(), "Resulting recipe's did does not match.");
-        assertEquals(result.getRecipeId().getIngredient_id(), testIngredient.getIngredient_id(), "Resulting recipe's ingredient_id does not match.");
+        assertEquals(result.getRecipeId().getIngredient_name(), testIngredient.getIngredient_name(), "Resulting recipe's ingredient name does not match.");
 
     }
 }
