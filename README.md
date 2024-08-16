@@ -75,7 +75,8 @@ I utilize Scrum boards to visualize our workflow, which includes the following s
 - **Done**: Completed tasks.
 
 **Current Board:**  
-![Screenshot 2024-08-13 234152](https://github.com/user-attachments/assets/c00a6c01-92c2-49d6-b261-0ba356e784c0)  
+![Screenshot 2024-08-15 212332](https://github.com/user-attachments/assets/56e4ccfa-e7a0-4d32-b692-896fb963c488)  
+
 
 ### Timelines
 I create and manage timelines using:
@@ -83,7 +84,7 @@ I create and manage timelines using:
 - **Sprints**: Time-boxed periods (typically 2 weeks) during which specific tasks are completed.
 
 **Current Timeline:**  
-![flavor_forge_2024-08-13_11 40pm](https://github.com/user-attachments/assets/a3431cd9-c680-4572-b02b-b42c9f7112f7)  
+![flavor_forge_2024-08-15_09 24pm](https://github.com/user-attachments/assets/bd954975-84f9-4e4c-a8b2-a725be26e295)  
 
 
 
@@ -100,17 +101,20 @@ I generate various reports in Jira to track our progress, including:
 
     
 **Sprint Health:**  
-![Screenshot 2024-08-13 234303](https://github.com/user-attachments/assets/534975ba-e805-4feb-804a-31ab2431f3fd)  
+ ![Screenshot 2024-08-15 212502](https://github.com/user-attachments/assets/723e1869-b665-4978-b77d-b025dd1ff326)  
+
 
 
     
 **Burndown Chart:**  
-![Screenshot 2024-08-13 234311](https://github.com/user-attachments/assets/b1b7ebcf-2793-4616-924d-413ad3918099)  
+![Screenshot 2024-08-15 212448](https://github.com/user-attachments/assets/dd282b63-4d5d-4103-be63-393eaec3441a)  
+
 
 
     
 **Days Remaining in Spring:**  
-![Screenshot 2024-08-13 234249](https://github.com/user-attachments/assets/74bf23cf-ab09-4f20-9bc3-e7eba66bcd06)  
+![Screenshot 2024-08-15 212454](https://github.com/user-attachments/assets/046ef32b-c9f9-43fc-96f5-2a698ae32a6e) 
+
 
 
 
