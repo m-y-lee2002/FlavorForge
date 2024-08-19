@@ -1,6 +1,5 @@
 package com.backend.backend.controllers;
 
-import com.backend.backend.Controller.LocalUserController;
 import com.backend.backend.Controller.LocalUserManagementController;
 import com.backend.backend.Entity.LocalUser;
 import com.backend.backend.Service.LocalUserManagementService;
@@ -13,16 +12,13 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(LocalUserManagementController.class)
-public class LocalUserControllerTests {
+public class LocalUserManagementControllerTests {
 
     @Autowired
     private MockMvc mockMvc;

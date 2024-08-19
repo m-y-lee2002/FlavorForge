@@ -18,19 +18,17 @@ public class DishController {
     private DishServices dishServices;
 
     @PostMapping("/api/dish/createDish")
-    public ResponseEntity<Dish> createDish(@RequestBody Dish dish){
-        try{
+    public ResponseEntity<Dish> createDish(@RequestBody Dish dish) {
+        try {
             boolean dishExists = dishServices.checkForDish(dish);
-            if(dishExists){
-                return null;
-            }else{
+            if (dishExists) {
+                return ResponseEntity.status(HttpStatus.CONFLICT).build(); // Return CONFLICT status
+            } else {
                 Dish savedDish = dishServices.saveDish(dish);
                 return ResponseEntity.ok(savedDish);
             }
-
-        }catch(RuntimeException e){
+        } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
-
 }

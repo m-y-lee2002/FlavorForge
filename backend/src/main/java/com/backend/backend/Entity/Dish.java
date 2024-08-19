@@ -1,10 +1,7 @@
 package com.backend.backend.Entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Setter
@@ -12,9 +9,11 @@ import lombok.Setter;
 @Table(name="Dish")
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode
 public class Dish {
 
     @EmbeddedId
+    @EqualsAndHashCode.Include
     @Column(name = "did", nullable = false, unique = true)
     private DishId did;
 
