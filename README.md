@@ -120,4 +120,4 @@ I generate various reports in Jira to track our progress, including:
 
 
 ## Contact
-For inquiries, please contact Michael Lee (mylee13845@gmail.com) or visit my [GitHub profile](https://github.com/m-y-lee2002).
+For inquiries or suggestions, please contact Michael Lee (mylee13845@gmail.com) or visit my [GitHub profile](https://github.com/m-y-lee2002).
