@@ -21,7 +21,7 @@ public class DishServices {
     public Boolean checkForDish(Dish targetDish){
         Dish result = dishRepo.findDishByDid(targetDish.getDid());
         if(result != null){
-            return null;
+            return true;
         }else{
             return false;
         }

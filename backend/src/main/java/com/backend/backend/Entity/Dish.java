@@ -62,6 +62,21 @@ public class Dish {
         this.fibers = fibers;
     }
 
-
+    public void changeFoodType(String foodType){
+        String caseUniformity = foodType.toUpperCase();
+        if(caseUniformity.equals("B")){
+            this.foodType = "BREAKFAST";
+        }else if(caseUniformity.equals("L")){
+            this.foodType = "LUNCH";
+        }else if(caseUniformity.equals("D1")) {
+            this.foodType = "DINNER";
+        }else if(caseUniformity.equals("D2")) {
+            this.foodType = "DESSERT";
+        }else if(caseUniformity.equals("D3")) {
+            this.foodType = "DRINKS";
+        }else{
+            this.foodType = "N/A";
+        }
+    }
 
 }
