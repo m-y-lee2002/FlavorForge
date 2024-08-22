@@ -5,10 +5,9 @@ import com.backend.backend.Service.DishServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
@@ -28,6 +27,15 @@ public class DishController {
                 return ResponseEntity.ok(savedDish);
             }
         } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+    @GetMapping("/api/dish/getFoodTypeDishes/{food_type}")
+    public ResponseEntity<List<Dish>> findAllDishesOfFoodType(@PathVariable("food_type") String food_type){
+        try{
+            List<Dish> target_dishes = dishServices.getFoodTypeDishes(food_type);
+            return ResponseEntity.ok(target_dishes);
+        }catch(RuntimeException e){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }

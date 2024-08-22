@@ -14,6 +14,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
@@ -35,30 +38,43 @@ public class DishServiceTests {
         testDish = new Dish(testUser.getEmail(), "ramen", "my_penis_you_suck_all_the_time.png", "l", 10, 300, 5, 30, 3);
     }
 
-//    @Test
-//    public void testCheckForDish_Success(){
-//
-//        when(dishRepo.findDishByDid(testDish.getDid())).thenReturn(null);
-//
-//        boolean result = dishServices.checkForDish(testDish);
-//
-//        assertFalse(result);
-//    }
-//    @Test
-//    public void testCheckForDish_Fail(){
-//        when(dishRepo.findDishByDid(testDish.getDid())).thenReturn(testDish);
-//
-//        boolean result = dishServices.checkForDish(testDish);
-//
-//        assertTrue(result);
-//    }
-//    @Test
-//    public void testSaveDish_Success(){
-//        when(dishRepo.save(testDish)).thenReturn(testDish);
-//
-//        Dish result = dishServices.saveDish(testDish);
-//
-//       assertEquals(testDish, result);
-//    }
+    @Test
+    public void testCheckForDish_Success(){
+
+        when(dishRepo.findDishByDid(testDish.getDid())).thenReturn(null);
+
+        boolean result = dishServices.checkForDish(testDish);
+
+        assertFalse(result);
+    }
+    @Test
+    public void testCheckForDish_Fail(){
+        when(dishRepo.findDishByDid(testDish.getDid())).thenReturn(testDish);
+
+        boolean result = dishServices.checkForDish(testDish);
+
+        assertTrue(result);
+    }
+    @Test
+    public void testSaveDish_Success(){
+        when(dishRepo.save(testDish)).thenReturn(testDish);
+
+        Dish result = dishServices.saveDish(testDish);
+
+       assertEquals(testDish, result);
+    }
+    @Test
+    public void testGetFoodTypeDishes(){
+        Dish testDish2 = new Dish(testUser.getEmail(), "Spagetti and Meatballs", "my_penis_you_suck_all_the_time.png", "l", 10, 300, 5, 30, 3);
+        Dish testDish3 = new Dish(testUser.getEmail(), "Cheese Burger", "my_penis_you_suck_all_the_time.png", "l", 10, 300, 5, 30, 3);
+        List<Dish> list_of_dishes = new ArrayList<>();
+        list_of_dishes.add(testDish);
+        list_of_dishes.add(testDish2);
+        list_of_dishes.add(testDish3);
+        when(dishRepo.findDishByFoodType("DINNER")).thenReturn(list_of_dishes);
+
+        List<Dish> result = dishServices.getFoodTypeDishes("DINNER");
+        assertEquals(result.size(),3);
+    }
 
 }

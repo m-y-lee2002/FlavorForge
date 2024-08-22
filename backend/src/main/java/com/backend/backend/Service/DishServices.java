@@ -5,6 +5,8 @@ import com.backend.backend.Repository.DishRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DishServices {
     @Autowired
@@ -25,5 +27,9 @@ public class DishServices {
         }else{
             return false;
         }
+    }
+    public List<Dish> getFoodTypeDishes(String foodType){
+        List<Dish> result = dishRepo.findDishByFoodType(foodType);
+        return result;
     }
 }
