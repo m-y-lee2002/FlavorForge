@@ -5,6 +5,7 @@ import com.backend.backend.Repository.DishRepo;
 import com.backend.backend.Repository.RecipeRepo;
 import com.backend.backend.Service.DishServices;
 import com.backend.backend.Service.RecipeService;
+import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
@@ -14,4 +15,5 @@ public class RecipeServiceTests {
 
     @Mock
     private RecipeRepo recipeRepo;
+
 }

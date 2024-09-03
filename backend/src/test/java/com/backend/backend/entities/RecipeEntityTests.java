@@ -65,19 +65,18 @@ public class RecipeEntityTests {
         entityManager.persist(testIngredient);
         entityManager.persist(testDish);
         entityManager.flush();
-        RecipeId recipeId = new RecipeId(testDish.getDid(), testIngredient.getIngredient_name());
-        Recipe recipe = new Recipe(recipeId, 3.5, "grams");
+        Recipe recipe = new Recipe(testIngredient.getIngredient_name(),testDish.getDid(), 3.5, "grams");
 
         entityManager.persist(recipe);
         entityManager.flush();
-        Recipe result = entityManager.find(Recipe.class, recipe.getRecipeId());
+        Recipe result = entityManager.find(Recipe.class, recipe.getIngredient_name());
 
         assertNotNull(result, "Recipe could not be found using recipe's composite key recipeId.");
 
         assertEquals(result.getAmount(),3.5);
         assertEquals(result.getMeasurement(), "grams");
-        assertEquals(result.getRecipeId().getDid(), testDish.getDid(), "Resulting recipe's did does not match.");
-        assertEquals(result.getRecipeId().getIngredient_name(), testIngredient.getIngredient_name(), "Resulting recipe's ingredient name does not match.");
+        assertEquals(result.getDid(), testDish.getDid(), "Resulting recipe's did does not match.");
+        assertEquals(result.getIngredient_name(), testIngredient.getIngredient_name(), "Resulting recipe's ingredient name does not match.");
 
     }
 }

@@ -1,5 +1,5 @@
-export const loginAuth = (email, passsword) => {
-    return fetch(`http://localhost:8080/api/login/${email}/${passsword}`, {
+export const loginAuth = (email, password) => {
+    return fetch(`http://localhost:8080/api/account/login/${email}/${password}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

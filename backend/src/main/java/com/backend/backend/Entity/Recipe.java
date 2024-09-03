@@ -1,9 +1,6 @@
 package com.backend.backend.Entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -14,9 +11,13 @@ import lombok.*;
 @NoArgsConstructor
 @EqualsAndHashCode
 public class Recipe {
-    @EmbeddedId
-    @EqualsAndHashCode.Include
-    private RecipeId recipeId;
+    @Id
+    @Column(name="ingredient_name")
+    private String ingredient_name;
+
+    @Embedded
+    @Column(name="did", nullable = false)
+    private DishId did;
 
     @Column(name="amount",nullable = false)
     private double amount;
