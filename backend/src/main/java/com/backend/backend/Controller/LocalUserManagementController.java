@@ -1,5 +1,6 @@
 package com.backend.backend.Controller;
 
+import com.backend.backend.Entity.LocalUser;
 import com.backend.backend.Service.LocalUserManagementService;
 import com.backend.backend.Service.LocalUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,15 @@ public class LocalUserManagementController {
         }catch(RuntimeException e){
             System.out.println(ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build());
             return false;
+        }
+    }
+    @PostMapping("/api/account/register")
+    public ResponseEntity<LocalUser> registerUser(@RequestBody LocalUser targetUser){
+        try{
+            LocalUser savedUser = localUserManagementService.saveLocalUser(targetUser);
+            return ResponseEntity.ok(savedUser);
+        }catch(RuntimeException e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
 }
