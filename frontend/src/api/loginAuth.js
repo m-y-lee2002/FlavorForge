@@ -10,7 +10,7 @@ export const loginAuth = (email, password) => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        return response;
+        return response.json();
     })
     .catch(error => {
         console.error('Error fetching data:', error);
