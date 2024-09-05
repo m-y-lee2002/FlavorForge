@@ -13,13 +13,15 @@ public class LocalUserManagementService {
     @Autowired
     private LocalUserRepo localUserRepo;
 
-    public Boolean verifyAccount(String email, String password) {
+    public LocalUser verifyAccount(String email, String password) {
         LocalUser user = localUserRepo.findLocalUserByEmail(email);
         if (user != null) {
             // Assuming passwords are stored as hashed, compare the hashed password
-            return user.getPassword().equals(password); // Adjust this if you are using hashing
+            if(user.getPassword().equals(password)){
+                return user;// Adjust this if you are using hashing
+            }
         }
-        return false; // Return false if the user is not found
+        return null; // Return false if the user is not found
     }
     public LocalUser saveLocalUser(LocalUser targetUser){
         try {
@@ -32,5 +34,20 @@ public class LocalUserManagementService {
             throw new RuntimeException("Failed to save user: " + e.getMessage());
         }
 
+    }
+    public LocalUser getLocalUserByEmail(String targetEmail){
+        try{
+            return localUserRepo.findLocalUserByEmail(targetEmail);
+        }catch(Exception e){
+            throw new RuntimeException("Failed to get user by email: " + e.getMessage());
+        }
+    }
+
+    public LocalUser getLocalUserByUsername(String targetUsername){
+        try{
+            return localUserRepo.findLocalUserByUsername(targetUsername);
+        }catch(Exception e){
+            throw new RuntimeException("Failed to get user by username: " + e.getMessage());
+        }
     }
 }

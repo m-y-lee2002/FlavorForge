@@ -44,4 +44,10 @@ public class LocalUserRepoTests {
         LocalUser result = entityManager.find(LocalUser.class, testUser.getEmail());
         assertEquals(result, testUser);
     }
+    @Test
+    public void testFindLocalUserByUsername(){
+        localUserRepo.save(testUser);
+        LocalUser result = localUserRepo.findLocalUserByUsername(testUser.getUsername());
+        assertEquals(result, testUser);
+    }
 }

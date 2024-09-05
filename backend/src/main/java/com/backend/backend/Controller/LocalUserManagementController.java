@@ -18,21 +18,35 @@ public class LocalUserManagementController {
     LocalUserManagementService localUserManagementService;
 
     @GetMapping("/api/account/login/{email}/{password}")
-    public Boolean verifyLogin(@PathVariable("email") String targetEmail, @PathVariable("password") String targetPassword ){
+    public ResponseEntity<LocalUser> verifyLogin(@PathVariable("email") String targetEmail, @PathVariable("password") String targetPassword ){
         try{
             String hashedPassword = DigestUtils.sha1Hex(targetPassword);
             System.out.println(hashedPassword);
-            return localUserManagementService.verifyAccount(targetEmail, hashedPassword);
+            return ResponseEntity.ok(localUserManagementService.verifyAccount(targetEmail, hashedPassword));
         }catch(RuntimeException e){
             System.out.println(ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build());
-            return false;
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
     @PostMapping("/api/account/register")
-    public ResponseEntity<LocalUser> registerUser(@RequestBody LocalUser targetUser){
+    public ResponseEntity<String> registerUser(@RequestBody LocalUser targetUser){
         try{
-            LocalUser savedUser = localUserManagementService.saveLocalUser(targetUser);
-            return ResponseEntity.ok(savedUser);
+            targetUser.setPassword(DigestUtils.sha1Hex(targetUser.getPassword()));
+//            targetUser.setPassword("0");
+            LocalUser usernameExists = localUserManagementService.getLocalUserByUsername(targetUser.getUsername());
+            LocalUser emailExists = localUserManagementService.getLocalUserByEmail(targetUser.getEmail());
+            if(emailExists != null){
+                return ResponseEntity.ok("Email in use.");
+            }else if(usernameExists != null){
+                return ResponseEntity.ok("Username in use.");
+            }else{
+                LocalUser savedUser = localUserManagementService.saveLocalUser(targetUser);
+                if(savedUser!= null){
+                    return ResponseEntity.ok("Successful register.");
+                }
+                return ResponseEntity.ok("Unexpected result from register.");
+
+            }
         }catch(RuntimeException e){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }

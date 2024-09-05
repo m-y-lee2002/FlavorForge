@@ -39,14 +39,15 @@ public class LocalUserManagementControllerTests {
     public void testSuccesfulLogin() throws Exception {
         String goalEmail = testUser.getEmail();
         String goalPassword =  DigestUtils.sha1Hex(testUser.getPassword());
+        String testUserJson = objectMapper.writeValueAsString(testUser);
         // Arrange
-        when(localUserManagementService.verifyAccount(goalEmail,goalPassword)).thenReturn(true);
+        when(localUserManagementService.verifyAccount(goalEmail,goalPassword)).thenReturn(testUser);
 
         // Act & Assert
         mockMvc.perform(get("/api/account/login/{email}/{password}", testUser.getEmail(), testUser.getPassword())
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string("true"));
+                .andExpect(content().json(testUserJson));
     }
 
     @Test
@@ -54,26 +55,26 @@ public class LocalUserManagementControllerTests {
         String goalEmail = "differentEmail@gmail.com";
         String goalPassword =  DigestUtils.sha1Hex(testUser.getPassword());
         // Arrange
-        when(localUserManagementService.verifyAccount(goalEmail,goalPassword)).thenReturn(false);
+        when(localUserManagementService.verifyAccount(goalEmail,goalPassword)).thenReturn(testUser);
 
         // Act & Assert
         mockMvc.perform(get("/api/account/login/{email}/{password}", testUser.getEmail(), testUser.getPassword())
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string("false"));
+                .andExpect(content().string(""));
     }
     @Test
     public void testFailedLoginWrongPassword() throws Exception {
         String goalEmail = testUser.getEmail();
         String goalPassword =  DigestUtils.sha1Hex("wrongPassword");
         // Arrange
-        when(localUserManagementService.verifyAccount(goalEmail,goalPassword)).thenReturn(false);
+        when(localUserManagementService.verifyAccount(goalEmail,goalPassword)).thenReturn(testUser);
 
         // Act & Assert
         mockMvc.perform(get("/api/account/login/{email}/{password}", testUser.getEmail(), testUser.getPassword())
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string("false"));
+                .andExpect(content().string(""));
     }
 
     @Test
@@ -81,26 +82,30 @@ public class LocalUserManagementControllerTests {
         String goalEmail = testUser.getEmail();
         String goalPassword =  testUser.getPassword();
         // Arrange
-        when(localUserManagementService.verifyAccount(goalEmail,goalPassword)).thenReturn(false);
+        when(localUserManagementService.verifyAccount(goalEmail,goalPassword)).thenReturn(testUser);
 
         // Act & Assert
         mockMvc.perform(get("/api/account/login/{email}/{password}", testUser.getEmail(), testUser.getPassword())
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string("false"));
+                .andExpect(content().string(""));
     }
 
     @Test
     public void testSuccessfulRegister() throws Exception {
         // Arrange
-        when(localUserManagementService.saveLocalUser(testUser)).thenReturn(testUser);
+        LocalUser testUserEncrypted = new LocalUser("testEmail@gmail.com", "testUser1", DigestUtils.sha1Hex(testUser.getPassword()));
+//        LocalUser testUserEncrypted = new LocalUser("testEmail@gmail.com", "testUser1","0");
+
+        when(localUserManagementService.saveLocalUser(testUserEncrypted)).thenReturn(testUserEncrypted);
         String testUserJson = objectMapper.writeValueAsString(testUser);
         // Act & Assert
         mockMvc.perform(post("/api/account/register")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(testUserJson))
                 .andExpect(status().isOk())
-                .andExpect(content().json(testUserJson));
+                .andExpect(content().string("Successful register."));
     }
+
 
 }
