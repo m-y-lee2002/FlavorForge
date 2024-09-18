@@ -30,10 +30,10 @@ public class DishController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
-    @GetMapping("/api/dish/getFoodTypeDishes/{food_type}")
-    public ResponseEntity<List<Dish>> findAllDishesOfFoodType(@PathVariable("food_type") String food_type){
+    @GetMapping("/api/dish/getFoodTypeDishes/{food_type}/{email}")
+    public ResponseEntity<List<Dish>> findAllDishesOfFoodType(@PathVariable("food_type") String food_type, @PathVariable("email") String email){
         try{
-            List<Dish> target_dishes = dishServices.getFoodTypeDishes(food_type);
+            List<Dish> target_dishes = dishServices.getFoodTypeDishes(food_type,email);
             return ResponseEntity.ok(target_dishes);
         }catch(RuntimeException e){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();

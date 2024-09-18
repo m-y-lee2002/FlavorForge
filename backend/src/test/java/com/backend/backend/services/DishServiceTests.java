@@ -71,9 +71,9 @@ public class DishServiceTests {
         list_of_dishes.add(testDish);
         list_of_dishes.add(testDish2);
         list_of_dishes.add(testDish3);
-        when(dishRepo.findDishByFoodType("DINNER")).thenReturn(list_of_dishes);
+        when(dishRepo.findDishByFoodTypeAndDidEmail("DINNER", testUser.getEmail())).thenReturn(list_of_dishes);
 
-        List<Dish> result = dishServices.getFoodTypeDishes("DINNER");
+        List<Dish> result = dishServices.getFoodTypeDishes("DINNER", testUser.getEmail());
         assertEquals(result.size(),3);
     }
 

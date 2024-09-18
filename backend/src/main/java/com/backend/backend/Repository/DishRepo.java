@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface DishRepo extends JpaRepository<Dish, DishId> {
     Dish findDishByDid(DishId did);
-    List<Dish> findDishByFoodType(String foodType);
-}
+    List<Dish> findDishByFoodTypeAndDidEmail(String foodType, String email);
+} 

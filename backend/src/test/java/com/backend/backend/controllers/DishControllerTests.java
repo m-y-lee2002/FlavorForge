@@ -74,9 +74,9 @@ public class DishControllerTests {
         listOfDishes.add(testDish);
         listOfDishes.add(testDish2);
         listOfDishes.add(testDish3);
-        when(dishServices.getFoodTypeDishes("DINNER")).thenReturn(listOfDishes);
+        when(dishServices.getFoodTypeDishes("DINNER",testUser.getEmail())).thenReturn(listOfDishes);
 
-        mockMvc.perform(get("/api/dish/getFoodTypeDishes/{food_type}", "DINNER")
+        mockMvc.perform(get("/api/dish/getFoodTypeDishes/{food_type}/{email}", "DINNER",testUser.getEmail())
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))

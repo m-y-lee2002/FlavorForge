@@ -1,9 +1,14 @@
 import React from 'react';
-
-const Breakfastbutton = () => {
+import { useNavigate } from 'react-router-dom';
+const Breakfastbutton = ({username}) => {
+    const mealType = 'BREAKFAST';
+    const navigate = useNavigate();
+    const navigateToBreakfast = ()=>{
+        navigate('/breakfast');
+    }
     return (
         <div>
-            <button>BREAKFAST</button>
+            <button onClick={navigateToBreakfast}>{mealType}</button>
         </div>
     );
 }

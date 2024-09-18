@@ -28,8 +28,8 @@ public class DishServices {
             return false;
         }
     }
-    public List<Dish> getFoodTypeDishes(String foodType){
-        List<Dish> result = dishRepo.findDishByFoodType(foodType);
+    public List<Dish> getFoodTypeDishes(String foodType, String email){
+        List<Dish> result = dishRepo.findDishByFoodTypeAndDidEmail(foodType, email);
         return result;
     }
 }
