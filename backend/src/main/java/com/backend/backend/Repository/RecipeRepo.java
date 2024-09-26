@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface RecipeRepo extends JpaRepository<Recipe, String> {
-    List<Recipe> findRecipesByDid(DishId did);
+public interface RecipeRepo extends JpaRepository<Recipe, DishId> {
+    List<Recipe> findRecipeByDid(DishId did);
 }

@@ -71,7 +71,7 @@ public class RecipeRepoTests {
         recipeRepo.save(testRecipe);
         testRecipe.setIngredient_name("Sugar");
         recipeRepo.save(testRecipe);
-        List<Recipe> result = recipeRepo.findRecipesByDid(testRecipe.getDid());
+        List<Recipe> result = recipeRepo.findRecipeByDid(testRecipe.getDid());
 
         assertEquals(result.size(), 2);
     }

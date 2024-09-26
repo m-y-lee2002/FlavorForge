@@ -1,6 +1,7 @@
 package com.backend.backend.Controller;
 
 import com.backend.backend.Entity.Dish;
+import com.backend.backend.Entity.DishId;
 import com.backend.backend.Service.DishServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -39,4 +40,5 @@ public class DishController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
+
 }

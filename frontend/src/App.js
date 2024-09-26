@@ -9,6 +9,7 @@ import LunchPage from './components/lunchPage';
 import DinnerPage from './components/dinnerPage';
 import DessertPage from './components/dessertPage';
 import DrinksPage from './components/drinksPage';
+import CreateDishPage from './components/createDishPage';
 import { useState } from 'react';
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
                 <Route path="/dinner" element = {<DinnerPage/>}/>
                 <Route path="/dessert" element = {<DessertPage/>}/>
                 <Route path="/drinks" element = {<DrinksPage/>}/>
+                <Route path="/createdish" element = {<CreateDishPage/>}/>
             </Routes>
           </Router>
     </div>

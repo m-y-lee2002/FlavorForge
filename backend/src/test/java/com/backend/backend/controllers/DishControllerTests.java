@@ -2,6 +2,7 @@ package com.backend.backend.controllers;
 
 import com.backend.backend.Controller.DishController;
 import com.backend.backend.Entity.Dish;
+import com.backend.backend.Entity.DishId;
 import com.backend.backend.Entity.LocalUser;
 import com.backend.backend.Service.DishServices;
 import org.junit.jupiter.api.BeforeAll;
@@ -18,10 +19,12 @@ import java.util.List;
 
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.web.servlet.function.RequestPredicates.contentType;
 
 @WebMvcTest(DishController.class)
 public class DishControllerTests {
@@ -88,4 +91,6 @@ public class DishControllerTests {
                 .andExpect(jsonPath("$[2].did.email", is(testDish3.getDid().getEmail())))
                 .andExpect(jsonPath("$[2].did.dname", is(testDish3.getDid().getDname())));
     }
+//    @Test
+//    public void
 }

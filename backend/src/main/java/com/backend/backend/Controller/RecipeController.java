@@ -19,7 +19,7 @@ public class RecipeController {
     @Autowired
     private RecipeService recipeService;
 
-//    @GetMapping("/api/recipe/getRecipe/{did}/{ingredient}")
+//    @GetMapping("/api/recipe/getRecipe/{dname}/{email}")
 //    public ResponseEntity<List<Recipe>> findAllRecipe(@PathVariable("did") String food_type){
 //        try{
 //            List<Dish> target_dishes = dishServices.getFoodTypeDishes(food_type);

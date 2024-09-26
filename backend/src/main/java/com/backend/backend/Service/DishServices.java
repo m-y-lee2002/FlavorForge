@@ -1,6 +1,7 @@
 package com.backend.backend.Service;
 
 import com.backend.backend.Entity.Dish;
+import com.backend.backend.Entity.DishId;
 import com.backend.backend.Repository.DishRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,6 +31,10 @@ public class DishServices {
     }
     public List<Dish> getFoodTypeDishes(String foodType, String email){
         List<Dish> result = dishRepo.findDishByFoodTypeAndDidEmail(foodType, email);
+        return result;
+    }
+    public Dish getDishByDid(DishId did){
+        Dish result = dishRepo.findDishByDid(did);
         return result;
     }
 }

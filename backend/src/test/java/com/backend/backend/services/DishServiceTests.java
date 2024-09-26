@@ -28,7 +28,7 @@ public class DishServiceTests {
     private DishRepo dishRepo;
     @BeforeEach
     public void setUp() {
-        MockitoAnnotations.openMocks(this); // Initialize mocks
+        MockitoAnnotations.openMocks(this);
     }
     private static LocalUser testUser;
     private static Dish testDish;
@@ -76,5 +76,17 @@ public class DishServiceTests {
         List<Dish> result = dishServices.getFoodTypeDishes("DINNER", testUser.getEmail());
         assertEquals(result.size(),3);
     }
+    @Test
+    public void testGetDishByDid_Success(){
+        when(dishRepo.findDishByDid(testDish.getDid())).thenReturn(testDish);
+        Dish result = dishServices.getDishByDid(testDish.getDid());
+        assertEquals(result, testDish);
 
+    }
+    @Test
+    public void testGetDishByDid_Fail(){
+        when(dishRepo.findDishByDid(testDish.getDid())).thenReturn(null);
+        Dish result = dishServices.getDishByDid(testDish.getDid());
+        assertNull(result);
+    }
 }
