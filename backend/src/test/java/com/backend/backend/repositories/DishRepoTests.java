@@ -35,11 +35,11 @@ public class DishRepoTests {
     public static void setTestDummies() {
         testUser = new LocalUser("testEmail@gmail.com", "testUser1", "1234");
         testUser2 = new LocalUser("testEmail2@gmail.com", "testUser2", "1234");
-        testDish = new Dish(testUser.getEmail(), "ramen", "my_penis_you_suck_all_the_time.png", "l", 10, 300, 5, 30, 3);
-        testDish2 = new Dish(testUser.getEmail(), "Spagetti and Meatballs", "my_penis_you_suck_all_the_time.png", "l", 10, 300, 5, 30, 3);
-        testDish3 = new Dish(testUser.getEmail(), "Cheese Burger", "my_penis_you_suck_all_the_time.png", "l", 10, 300, 5, 30, 3);
-        testDish_differentFoodType = new Dish(testUser.getEmail(), "Fried Rice", "my_penis_you_suck_all_the_time.png", "d1", 10, 300, 5, 30, 3);
-        testDish_differentUser =  new Dish(testUser2.getEmail(), "Cheese Burger", "my_penis_you_suck_all_the_time.png", "l", 10, 300, 5, 30, 3);
+        testDish = new Dish(testUser.getEmail(), "ramen", "example_image.png", "l", 10, 300, 5, 30, 3);
+        testDish2 = new Dish(testUser.getEmail(), "Spagetti and Meatballs", "example_image.png", "l", 10, 300, 5, 30, 3);
+        testDish3 = new Dish(testUser.getEmail(), "Cheese Burger", "example_image.png", "l", 10, 300, 5, 30, 3);
+        testDish_differentFoodType = new Dish(testUser.getEmail(), "Fried Rice", "example_image.png", "d1", 10, 300, 5, 30, 3);
+        testDish_differentUser =  new Dish(testUser2.getEmail(), "Cheese Burger", "example_image.png", "l", 10, 300, 5, 30, 3);
     }
     @Test
     @DirtiesContext
