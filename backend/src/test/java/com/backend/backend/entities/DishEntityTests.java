@@ -38,11 +38,11 @@ public class DishEntityTests {
     @Test
     @DirtiesContext
     public void testDishPersistence(){
-        Dish lunch_dish = new Dish(testUser1.getEmail(),"ramen", "my_penis_you_suck_all_the_time.png", "l", 10, 300, 5, 30, 3);
-        Dish breakfast_dish = new Dish(testUser2.getEmail(),"pancake", "my_penis_you_suck_all_the_time.png", "b", 10, 300, 5, 30, 3);
-        Dish dinner_dish = new Dish(testUser3.getEmail(),"Steak", "my_penis_you_suck_all_the_time.png", "d1", 10, 300, 5, 30, 3);
-        Dish dessert_dish = new Dish(testUser4.getEmail(),"apple pie", "my_penis_you_suck_all_the_time.png", "d2", 10, 300, 5, 30, 3);
-        Dish drinks = new Dish(testUser5.getEmail(),"matcha latte", "my_penis_you_suck_all_the_time.png", "d3", 10, 300, 5, 30, 3);
+        Dish lunch_dish = new Dish(testUser1.getEmail(),"ramen", "example_image.png", "l", 10, 300, 5, 30, 3);
+        Dish breakfast_dish = new Dish(testUser2.getEmail(),"pancake", "example_image.png", "b", 10, 300, 5, 30, 3);
+        Dish dinner_dish = new Dish(testUser3.getEmail(),"Steak", "example_image.png", "d1", 10, 300, 5, 30, 3);
+        Dish dessert_dish = new Dish(testUser4.getEmail(),"apple pie", "example_image.png", "d2", 10, 300, 5, 30, 3);
+        Dish drinks = new Dish(testUser5.getEmail(),"matcha latte", "example_image.png", "d3", 10, 300, 5, 30, 3);
 
 
         entityManager.persist(lunch_dish);
@@ -83,11 +83,11 @@ public class DishEntityTests {
     @Test
     @DirtiesContext
     public void testSameUserWithMultipleDishes(){
-        Dish lunch_dish = new Dish(testUser1.getEmail(),"ramen", "my_penis_you_suck_all_the_time.png", "l", 10, 300, 5, 30, 3);
-        Dish breakfast_dish = new Dish(testUser1.getEmail(),"pancake", "my_penis_you_suck_all_the_time.png", "b", 10, 300, 5, 30, 3);
-        Dish dinner_dish = new Dish(testUser1.getEmail(),"Steak", "my_penis_you_suck_all_the_time.png", "d1", 10, 300, 5, 30, 3);
-        Dish dessert_dish = new Dish(testUser1.getEmail(),"apple pie", "my_penis_you_suck_all_the_time.png", "d2", 10, 300, 5, 30, 3);
-        Dish drinks = new Dish(testUser1.getEmail(),"matcha latte", "my_penis_you_suck_all_the_time.png", "d3", 10, 300, 5, 30, 3);
+        Dish lunch_dish = new Dish(testUser1.getEmail(),"ramen", "example_image.png", "l", 10, 300, 5, 30, 3);
+        Dish breakfast_dish = new Dish(testUser1.getEmail(),"pancake", "example_image.png", "b", 10, 300, 5, 30, 3);
+        Dish dinner_dish = new Dish(testUser1.getEmail(),"Steak", "example_image.png", "d1", 10, 300, 5, 30, 3);
+        Dish dessert_dish = new Dish(testUser1.getEmail(),"apple pie", "example_image.png", "d2", 10, 300, 5, 30, 3);
+        Dish drinks = new Dish(testUser1.getEmail(),"matcha latte", "example_image.png", "d3", 10, 300, 5, 30, 3);
 
         entityManager.persist(lunch_dish);
         entityManager.persist(breakfast_dish);
